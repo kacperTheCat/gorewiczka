@@ -1,1 +1,1 @@
-"# gorewiczka" 
+http://gorewiczka.pl/
