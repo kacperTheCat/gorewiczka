@@ -1,0 +1,120 @@
+@import "var.scss";
+//
+* {
+  @extend .reset;
+  margin: 0 auto;
+  background: $brand-color-black;
+  color: $brand-color-white;
+}
+
+main {
+  color: $brand-color-white; // font-style: $normal-font;
+  @extend .flexy;
+  font-family: $normal-font;
+  z-index: 0;
+}
+
+h1,
+h2 {
+  font-family: $fancy-font;
+  font-weight: 400;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+h2 {
+  font-size: 3rem;
+}
+//
+// h3 {
+//   margin: 1rem ;
+// }
+
+section {
+  // margin: 0 5vw;
+  @extend .flexy;
+  max-width: 100vw;
+  min-height: 100vh;
+  z-index: 0;
+}
+
+.wrapper {
+  // margin: 0 auto;
+  @extend .flexy;
+}
+
+a {
+  @extend .reset;
+    cursor: pointer;
+}
+.teleport{
+position:relative;
+transition: .5s;
+align-self: center;
+border: none;
+box-shadow: none;
+}
+.teleport__down{
+  position: relative;
+  transition: .5s;
+}
+.teleport a{
+padding: 1rem;
+  transition: .5s;
+}
+.teleport__down::after,.teleport__down::before{
+  content: "";
+  position: absolute;
+  top: 2rem;
+  width: 1.2rem;
+  border-radius: 1rem;
+  height: 4px;
+  background: $brand-color-white;
+  transition: .5s;
+}
+.teleport__down::before{
+right: 15px;
+ transform: skewy(140deg);
+}
+.teleport__down::after{
+left: 15px;
+ transform: skewy(220deg);
+}
+.arrow{
+  padding: 1rem;
+  transition: .5s;
+  &--move-down{
+    margin-bottom: 3rem;
+    top: 2rem;
+  }
+}
+button{
+  cursor: pointer;
+}
+
+
+.teleport__down:hover>{
+    top: 2.2rem;
+    color: $brand-color-orange;
+    cursor: pointer;
+}
+.teleport__down:hover > .arrow{
+    color: $brand-color-orange;
+}
+// .teleport:hover>.arrow{
+//   top: -5px;
+// }
+.pswp {
+    z-index: 2500;
+    &__share{
+      &--facebook{
+      color: $brand-color-white;}
+    }
+}
+.my-gallery img:hover > nav{
+  display: none;
+}

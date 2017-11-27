@@ -1,0 +1,807 @@
+@import "var.scss"; // @import "globals.scss";
+$brand-nav-bg: rgba(0,0,0, .7);
+@mixin flexy {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+@mixin flexy-row {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+html {
+  @extend .reset;
+}
+
+main {
+  background: transparent;
+}
+/*# sourceMappingURML=stylesheet_folder/RWD.css.map */
+@media only screen and (min-width: 320px) and (max-width: 400px){
+  .main-video{display: none;}
+section{
+  min-height: 150vh;
+  max-height: 210vh;
+}
+.about-note {
+    margin: 0px 1rem;
+}
+.coop-box{
+  min-height: 50vh;
+}
+}
+@media screen and (min-width: 625px){
+  .content__row{
+    width: 80vw;
+  }
+}
+@media only screen and (max-width: 750px)  and (orientation: landscape){
+.main-video{
+  display: none;
+}
+  nav {
+    @include flexy;
+
+  }
+.wrapper{
+  min-height: 310px;
+}
+.intro{
+  padding-bottom: 3rem;
+}
+.gallery{
+  padding-bottom: 3rem;
+}
+  .content{
+    &__row{
+      width: 25rem;
+    }
+  }
+  .my-gallery img{
+    width: 100px;
+  }
+  .about-note{
+    margin: 0 3rem;
+  }
+}
+@media screen and (min-width: 750px){
+  .main-video {
+    min-width: 100vw;
+    min-height: 100vh;
+    display: block;
+    margin: 0 auto;
+  }
+
+  body {
+    background: rgba(255,0,0,0);
+  }
+
+  // // nav----------------
+  nav {
+    padding: 0.5rem 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    // flex-direction: row;
+    @include flexy-row;
+    justify-content: space-between;
+    background: $brand-nav-bg;
+    box-shadow: 0 0 1px 2px rgba(0,0,0, .2);
+  }
+
+  .nav-logo {
+    @include flexy-row;
+    width: 30vw;
+    background: transparent;
+    z-index: -100;
+  }
+
+  .full-name {
+    font-size: 0;
+    background: transparent;
+
+    &--lowercase {
+      margin-bottom: 0.5rem;
+      font-size: 2.5rem;
+      align-self: flex-end;
+      background: transparent;
+    }
+
+    &--uppercase {
+      font-size: 3rem;
+      background: transparent;
+    }
+  }
+
+  .main-nav {
+    margin: 0;
+    width: 70vw;
+    display: flex;
+    align-self: center;
+    justify-content: flex-end;
+    background: transparent;
+
+    &__element {
+      margin: 0;
+      padding: 0 0.6rem;
+      width: auto;
+      border: none;
+      background: transparent;
+    }
+  }
+
+  .main-nav__element:first-child {
+    border-top: none;
+  }
+
+  .nav-link {
+    padding: 0.2rem;
+    font-size: 1rem;
+    width: auto;
+    background: transparent;
+  }
+
+  .nav-link:hover {
+    background: transparent;
+  }
+  // intro-------------------------------
+  .intro {
+    margin: 0;
+    background: transparent;
+  }
+
+  .quotation {
+    margin-top: 10vh;
+    align-self: center;
+    background: rgba(0, 0, 0, .3);
+
+    &__line {
+      background: transparent;
+    }
+
+    &__sign {
+      background: transparent;
+    }
+
+    &--ornament {
+      font-weight: 900;
+      background: transparent;
+    }
+  }
+
+  .teleport {
+    font-size: 2.5rem;
+    background: transparent;
+  }
+
+  .teleport__down {
+    background: transparent;
+  }
+
+  .arrow {
+    background: transparent;
+  }
+
+  .teleport__down::after,
+  .teleport__down::before {
+    top: 3.3rem;
+    width: 2rem;
+    border-radius: 1rem;
+    height: 5px;
+  }
+
+  .teleport__down::after {
+    left: 0.35rem;
+  }
+
+  .teleport__down::before {
+    right: 0.35rem;
+  }
+
+  .teleport:hover > .teleport__down::before {
+    top: 4.2rem;
+    color: $brand-color-orange;
+  }
+
+  .teleport:hover > .teleport__down::after {
+    top: 4.2rem;
+  }
+  // gallery-----------------------
+  .gallery {
+    width: 100%;
+  }
+
+  .gallery__headline {
+    margin-top: 2rem;
+  }
+
+  .tab {
+    margin: 1rem;
+  }
+
+  .content {
+    &__headline {
+      margin: 1rem 0 0 1.5rem;
+      text-align: left;
+      width: 40rem;
+    }
+
+    &__row {
+      margin-top: 2rem;
+      width: 40rem;
+      justify-content: center;
+    }
+
+    .my-gallery img {
+      margin: 0.5rem;
+    }
+  }
+  // -------------------about
+  .about {
+    width: 100%;
+  }
+
+  .wrapper--about {
+    @include flexy-row;
+    padding: 1rem;
+  }
+
+  .gorewiczka-photo {
+    padding: 1rem;
+  }
+
+  .about-note {
+    font-size: 1.2rem;
+  }
+  // coop ---------------------- -------
+  .coop {
+    margin: 0 1rem;
+    width: 100%;
+    padding-top: 3rem;
+  }
+
+  .wrapper--coop {
+    width: 80vw;
+    @include flexy-row;
+  }
+
+  .coop-box {
+    margin: 1rem;
+    min-height: 27vh;
+    &__link{
+      min-width: 100%;
+    }
+  }
+}
+.img-team-logo{
+  width: 30%;
+}
+.contact {
+  width: 100%;
+  font-size: 1rem;
+}
+@media  screen and (min-width: 750px){
+  .nav-link--last{
+    margin-right: 1rem;
+  }
+}
+@media screen and (min-width: 800px){
+.coop-box{
+  &__link{
+
+  }
+  .img-team-logo{
+    width: 30%;
+  }
+}
+}
+@media screen and (min-width: 998px) {
+  nav {
+    padding: 1rem 0;
+    width: 100%;
+  }
+
+  .wrapper {
+    max-height: 590px;
+  }
+
+  .full-name {
+    @include flexy-row;
+    font-size: 1.5rem;
+    background: transparent;
+
+    &--lowercase {
+      margin-top: 1rem;
+      font-size: 1.1rem;
+      align-self: flex-end;
+      background: transparent;
+    }
+
+    &--uppercase {
+      font-size: 1.4rem;
+      background: transparent;
+    }
+  }
+
+  .main-nav {
+    width: 68vw;
+  }
+
+  .quotation {
+    margin-bottom: -3rem;
+    font-size: 1.8rem;
+  }
+.gallery{
+
+  padding-bottom: 2rem;
+}
+  .gallery__headline {
+    margin: 0;
+  }
+
+  .tab {
+    margin: 0 1rem;
+  }
+
+  .content {
+    justify-content: center;
+
+    &__headline {
+      margin: 1rem 0 0 3.5rem;
+      text-align: left;
+    }
+
+    &__row {
+      margin: 0 auto;
+      width: 35rem;
+      justify-content: center;
+    }
+
+    .my-gallery img {
+      margin: 0.5rem;
+    }
+  }
+
+  .about {
+    padding-bottom: 2rem;
+  }
+
+  .wrapper--about {
+    max-height: 320px;
+  }
+
+  .about-note {
+    margin-right: 1.5rem;
+  }
+
+  .gorewiczka-photo {
+    padding: 3rem;
+  }
+
+  .coop {
+    padding-top: 0;
+    margin: 0;
+  }
+
+  .coop-box {
+    margin: 1rem;
+    height: 320px;
+  }
+
+  .img-publishing-logo {
+    width: 70%;
+  }
+
+  .img-team-logo {
+    width: 40%;
+  }
+}
+@media screen and (min-width: 1000px) {
+  // .wrapper {
+  //   max-height: 450px;
+  // }
+  .about{
+    padding-bottom: 5rem;
+  }
+  .coop{padding-bottom: 5rem;}
+  .wrapper--about{
+  max-height: 60vh;
+  }
+}
+@media screen and (min-width: 1023px) and (min-height: 1000px) and (orientation: portrait) {
+  .quotation {
+    font-size: 3.5rem;
+  }
+
+  .wrapper {
+    min-height: 500px;
+        max-height: 920px;
+  }
+  .wrapper--about{
+  max-height: 60vh;
+  }
+
+  .content {
+    &__headline {
+      margin: 1rem 0 0 2.5rem;
+      text-align: left;
+      font-size: 1.5rem;
+    }
+
+    &__row {
+      margin-top: 2rem;
+      width: 85vw;
+      justify-content: center;
+    }
+  }
+
+  .my-gallery img {
+    margin: 0.5rem;
+    max-width: 200px;
+  }
+
+  .tabs {
+    width: 60vw;
+  }
+
+  .tab {
+    width: 12rem;
+    height: 5rem;
+    font-size: 2rem;
+    border: 3px dotted $brand-color-white;
+  }
+
+  .active {
+    border: 1px solid $brand-color-white;
+    // background-image: linear-gradient(to top, #111, #000)!important;
+    color: $brand-color-orange;
+    transition: 1s;
+  }
+
+  .about-note {
+    font-size: 1.5rem;
+  }
+
+  .gorewiczka-photo {
+    padding: 2rem;
+  }
+
+  .coop-box {  width: 40vw;
+    &__link {
+      font-size: 1.3rem;
+      margin: 1rem;
+width: 100%;
+    }
+    height: 30vh;
+  }
+
+  .img-publishing-logo {
+    width: 85%;
+  }
+
+  .img-team-logo {
+    width: 55%;
+  }
+  .contact{font-size: 2rem;}
+}
+@media only screen and (min-width: 1300px) and (min-height: 630px) {
+  .wrapper {
+    max-height: 650px;
+  }
+  .wrapper--about{
+  max-height: 60vh;
+  }
+  .quotation {
+    font-size: 2rem;
+  }
+
+  .content {
+    &__row {
+      margin: 0 3rem;
+      width: 35rem;
+    }
+
+    &__headline {
+        margin: 1rem 0 1rem 4rem;
+      width: 35rem;
+    }
+  }
+
+  .my-gallery img {
+    max-width: 160px;
+  }
+  .coop-box{
+    width: 25rem;
+    font-size: 1.2rem;
+  }
+  .img-team-logo{
+    width: 30%;
+  }
+}
+@media screen and (min-width: 1510px) {
+  .wrapper {
+    max-height: 700px;
+  }
+  .wrapper--about{
+  max-height: 60vh;
+  }
+  nav {
+    padding: 1rem 0;
+  }
+
+  .full-name {
+    font-size: 2.8rem;
+
+    &--lowercase {
+      font-size: 1.8rem;
+    }
+
+    &--uppercase {
+      font-size: 2.5rem;
+    }
+  }
+
+  .nav-link {
+    font-size: 1.3rem;
+  }
+
+  .quotation {
+    font-size: 2.8rem;
+  }
+
+  .content{
+&__headline{
+  margin: 2rem  0 2rem 6rem ;
+}
+    &__row {
+    width: 45rem;
+  }}
+
+  .my-gallery img {
+    max-width: 200px;
+    min-height: 120px;
+  }
+
+  .about-note {
+    margin-left: 4rem;
+    width: 40vw;
+    font-size: 1.3rem;
+  }
+  .coop-box{
+    width: 25vw;
+    height: 50%;
+    &__link{
+      width: 100%;
+      min-height: 20rem;
+    }
+  }
+  .img-team-logo{
+    width: 30%;
+  }
+  .contact{
+    font-size: 3rem;
+  }
+}
+@media screen and (min-width: 1750px) {
+  .wrapper {
+    max-height: 800px;
+  }
+  .about-note {
+    margin-left: 10rem;
+    width: 30vw;
+  }
+
+  .coop-box {
+    width: 22vw;
+    min-height: 32vh;
+    max-height: 50vh;
+    &__link {
+      width: 100%;
+
+      font-size: 1rem;
+    }
+  }
+
+  .img-team-logo {
+    width: 28%;
+  }
+}
+@media screen and (min-width: 2100px) {
+  nav {
+    padding: 1.5rem 0;
+  }
+  .wrapper {
+    max-height: 1100px;
+  }
+  h2 {
+    font-size: 6rem;
+  }
+
+  .full-name {
+    font-size: 4rem;
+
+    &--lowercase {
+      font-size: 2rem;
+    }
+
+    &--uppercase {
+      font-size: 2.8rem;
+    }
+  }
+
+  .nav-link {
+    font-size: 1.5rem;
+  }
+
+  .quotation {
+    font-size: 3.5rem;
+  }
+
+  .tab {
+    padding: 0.3rem;
+    width: 13rem;
+    height: 8rem;
+    font-size: 2rem;
+    border: 4px dotted $brand-color-white;
+  }
+
+  .active {
+    border: solid;
+  }
+
+  .content {
+    &__headline {
+      font-size: 3rem;
+    }
+
+    &__row {
+      width: 65rem;
+    }
+  }
+
+  .my-gallery img {
+    max-width: 250px;
+    min-height: 120px;
+  }
+
+  .about-note {
+    margin-left: 4rem;
+    width: 40vw;
+    font-size: 1.8rem;
+  }
+
+  .coop-box {
+    width: 30vw;
+    height: 50rem;
+    &__link {
+      width: 100%;
+      height: 100%;
+      font-size: 2rem;
+    }
+  }
+  .gorewiczka-photo{width: 30vw;}
+}
+// @media screen and (min-width: 1366px) {
+//   .quotation {
+//     font-size: 2.5rem;
+//   }
+//   .gallery{
+//     padding-bottom: 4rem;
+//   }
+//   .content
+//   {&__row {
+//     width: 40rem;
+//   }
+// &__headline{
+//   margin: 1rem 0 0 1.5rem;
+// }}
+//
+//   .gorewiczka-photo {
+//     margin-left: 10rem;
+//     padding: 0;
+//     width: 30vw;
+//     height: auto;
+//   }
+//
+//   .about-note {
+//     margin: 0 8rem 0 10rem;
+//     font-size: 1.1rem;
+//     height: 80%;
+//     text-align: left;
+//   }
+//
+//   .coop-box__link {
+//     width: 100%;
+//     font-size: 1.2rem;
+//   }
+//
+//   .img-publishing-logo {
+//     margin: 4rem 0;
+//     width: 65%;
+//   }
+//
+//   .img-team-logo {
+//     width: 40%;
+//   }
+// }
+// @media screen and (min-width: 1440px) {
+//
+//   .about-note {
+//     margin-left: 12rem;
+//   }
+//
+//   .coop-box {
+//     margin: 2rem;
+//     width: 30vw;
+//   }
+// }
+// @media screen and (min-width: 1800px) {
+//   nav {
+//     width: 100vw;
+//   }
+//
+//   .main-nav {
+//     margin-right: 3rem;
+//   }
+//
+//   .full-name {
+//     font-size: 3rem;
+//
+//     &--lowercase {
+//       margin-top: 1rem;
+//       font-size: 1.4rem;
+//       align-self: flex-end;
+//       background: transparent;
+//     }
+//
+//     &--uppercase {
+//       font-size: 1.8rem;
+//       background: transparent;
+//     }
+//   }
+//
+//   .coop-box__link {
+//     height: 30vh;
+//   }
+//
+//   .content {
+//     &__headline {
+//       margin-left: 7rem;
+//     }
+//
+//     &__row {
+//       width: 60rem;
+//     }
+//   }
+//
+//   .my-gallery img {
+//     max-width: 240px;
+//     min-height: 170px;
+//   }
+//
+//   .gorewiczka-photo {
+//     width: 25vw;
+//   }
+//
+//   .about-note {
+//     width: 60%;
+//   }
+// }

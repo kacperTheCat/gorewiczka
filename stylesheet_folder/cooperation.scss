@@ -1,0 +1,56 @@
+// @import "var.scss";
+@import "globals.scss";
+
+.coop {
+  margin-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+.coop-box {
+  @extend .reset;
+  @extend .wrapper;
+  @extend .flexy;
+  padding: 1rem;
+  width: 80%;
+  height: 34vh;
+  border: 1px solid $brand-color-white;
+  font-size: 0.8rem;
+
+  &__link {
+    @extend .flexy;
+    text-align: center;
+    height: 100%;
+    width: 100%;
+  }
+}
+
+.coop-box:first-child {
+  margin-top: 1rem;
+}
+
+.coop-box:nth-child(2) {
+  margin-top: 1rem;
+}
+
+.img-publishing-logo {
+  width: 70%;
+}
+
+.img-team-logo {
+  width: 50%;
+}
+
+.text-link {
+  transition: 0.5s;
+}
+
+.coop-box__link:hover > .text-link {
+  color: $brand-color-orange;
+  letter-spacing: 1px;
+}
+// ------------------ section contact
+
+.contact {
+  padding-top: 3rem;
+  font-size: 2rem;
+}
